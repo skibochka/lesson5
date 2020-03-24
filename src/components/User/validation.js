@@ -106,13 +106,22 @@ class UserValidation extends Validation {
     signUp(data) {
         return this.Joi
             .object({
+                fullName: this.Joi
+                    .string()
+                    .min(1)
+                    .max(30)
+                    .required(),
                 email: this.Joi.string().email(),
                 password: this.Joi
                     .string()
                     .min(1)
                     .max(30)
                     .required(),
-                repeat_pass: this.Joi.ref('password'),
+                token: this.Joi
+                    .string()
+                    .min(1)
+                    .max(300)
+                    .required(),
             })
             .validate(data);
     }

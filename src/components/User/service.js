@@ -88,7 +88,7 @@ function logIn(email, token) {
  * @returns {Promise<void>}
  */
 function signUp(profile) {
-    return UserModel.create(profile).exec();
+    return UserModel.create(profile);
 }
 
 /**

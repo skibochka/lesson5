@@ -371,7 +371,7 @@ async function signUp(req, res, next) {
         if (error) {
             throw new ValidationError(error.details);
         }
-        const user = await UserService.create(req.body);
+        const user = await UserService.signUp(req.body);
         return res.status(200).json({
             data: user,
         });
