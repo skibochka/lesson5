@@ -12,4 +12,14 @@ describe('EXIST FILES', () => {
 
         done();
     });
+    it('Dotenv', (done) => {
+        expect(path.join(__dirname, '../../.env')).to.be.a.path();
+
+        done();
+    });
+    it('Nodemon', (done) => {
+        expect(path.join(__dirname, '../../nodemon.json')).to.be.a.path();
+
+        done();
+    });
 });
